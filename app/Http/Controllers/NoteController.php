@@ -89,4 +89,17 @@ class NoteController extends Controller
 
         return $this->array;
     }
+
+    public function delete($id) {
+
+        $note = Note::find($id);
+
+        if ($note) {
+            $note->delete();
+        } else {
+            $this->array['error'] = 'ID not found';
+        }
+
+        return $this->array;
+    }
 }
