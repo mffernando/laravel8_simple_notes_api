@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,16 +27,16 @@ Route::get('/ping', function (Request $request) {
 //Routes: CRUD
 
 // list notes -> /api/notes
-Route::get('/notes', '');
+Route::get('notes', [NoteController::class, 'all']);
 
-// list note -> /api/note/id
-Route::get('/note/{id}', '');
+// // list note -> /api/note/id
+// Route::get('/note/{id}', '');
 
-// create note -> /api/note
-Route::post('/note', '');
+// // create note -> /api/note
+// Route::post('/note', '');
 
-// update note -> /api/note/id
-Route::put('/note/{id}', '');
+// // update note -> /api/note/id
+// Route::put('/note/{id}', '');
 
-// delete note -> /api/note/id
-Route::delete('/note/{id}', '');
+// // delete note -> /api/note/id
+// Route::delete('/note/{id}', '');
