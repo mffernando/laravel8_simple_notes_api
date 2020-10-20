@@ -1,59 +1,62 @@
 ## Start the Project
-Clone or Download the Project
+Clone or Download the Project<br/>
+<br/>
 
 ## Create MySQL Database
-Create 'notes' table:
-
-mysql> create table notes (
-    id int not null auto_increment,
-    title varchar(100) not null,
-    body text not null,
-    primary key(id)
-);
-
-Check table:
-
-mysql> show tables;
-+-----------------+
-| Tables_in_notes |
-+-----------------+
-| notes           |
-+-----------------+
-
-mysql> show columns from notes;
-+-------+--------------+------+-----+---------+----------------+
-| Field | Type         | Null | Key | Default | Extra          |
-+-------+--------------+------+-----+---------+----------------+
-| id    | int          | NO   | PRI | NULL    | auto_increment |
-| title | varchar(100) | NO   |     | NULL    |                |
-| body  | text         | NO   |     | NULL    |                |
-+-------+--------------+------+-----+---------+----------------+
+Create 'notes' table:<br/>
+<br/>
+mysql> create table notes (<br/>
+    id int not null auto_increment,<br/>
+    title varchar(100) not null,<br/>
+    body text not null,<br/>
+    primary key(id)<br/>
+);<br/>
+<br/>
+Check table:<br/>
+<br/>
+mysql> show tables;<br/>
++-----------------+<br/>
+| Tables_in_notes |<br/>
++-----------------+<br/>
+| notes           |<br/>
++-----------------+<br/>
+<br/>
+mysql> show columns from notes;<br/>
++-------+--------------+------+-----+---------+----------------+<br/>
+| Field | Type         | Null | Key | Default | Extra          |<br/>
++-------+--------------+------+-----+---------+----------------+<br/>
+| id    | int          | NO   | PRI | NULL    | auto_increment |<br/>
+| title | varchar(100) | NO   |     | NULL    |                |<br/>
+| body  | text         | NO   |     | NULL    |                |<br/>
++-------+--------------+------+-----+---------+----------------+<br/>
+<br/>
 
 ## Routes
-
-Show all:
-Route::get('/notes', [NoteController::class, 'all']);
-GET - http://127.0.0.1:8000/api/notes
-
-Show one:
-Route::get('/note/{id}', [NoteController::class, 'one']);
-GET - http://127.0.0.1:8000/api/note/1
-
-Create new note:
-Route::post('/note', [NoteController::class, 'new']);
-POST - http://127.0.0.1:8000/api/note
-
-Update a note:
-Route::put('/note/{id}', [NoteController::class, 'edit']);
-PUT - http://127.0.0.1:8000/api/note/1
-
-delete a note:
-Route::delete('/note/{id}', [NoteController::class, 'delete']);
-DELETE - http://127.0.0.1:8000/api/note/1
+<br/>
+Show all: <br/>
+Route::get('/notes', [NoteController::class, 'all']); <br/>
+GET - http://127.0.0.1:8000/api/notes <br/>
+<br/>
+Show one: <br/>
+Route::get('/note/{id}', [NoteController::class, 'one']); <br/>
+GET - http://127.0.0.1:8000/api/note/1 <br/>
+<br/>
+Create new note: <br/>
+Route::post('/note', [NoteController::class, 'new']); <br/>
+POST - http://127.0.0.1:8000/api/note <br/>
+<br/>
+Update a note: <br/>
+Route::put('/note/{id}', [NoteController::class, 'edit']); <br/>
+PUT - http://127.0.0.1:8000/api/note/1<br/>
+<br/>
+delete a note: <br/>
+Route::delete('/note/{id}', [NoteController::class, 'delete']); <br/>
+DELETE - http://127.0.0.1:8000/api/note/1 <br/>
+<br/>
 
 ## Serve
-
-php artisan serve
+<br/>
+php artisan serve<br/>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
