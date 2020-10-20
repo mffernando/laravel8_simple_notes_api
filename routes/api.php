@@ -33,7 +33,7 @@ Route::get('/notes', [NoteController::class, 'all']);
 Route::get('/note/{id}', [NoteController::class, 'one']);
 
 // // create note -> /api/note
-// Route::post('/note', '');
+Route::post('/note', [NoteController::class, 'new']);
 
 // // update note -> /api/note/id
 // Route::put('/note/{id}', '');
