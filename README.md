@@ -1,3 +1,60 @@
+## Start the Project
+Clone or Download the Project
+
+## Create MySQL Database
+Create 'notes' table:
+
+mysql> create table notes (
+    id int not null auto_increment,
+    title varchar(100) not null,
+    body text not null,
+    primary key(id)
+);
+
+Check table:
+
+mysql> show tables;
++-----------------+
+| Tables_in_notes |
++-----------------+
+| notes           |
++-----------------+
+
+mysql> show columns from notes;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| title | varchar(100) | NO   |     | NULL    |                |
+| body  | text         | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+
+## Routes
+
+Show all:
+Route::get('/notes', [NoteController::class, 'all']);
+GET - http://127.0.0.1:8000/api/notes
+
+Show one:
+Route::get('/note/{id}', [NoteController::class, 'one']);
+GET - http://127.0.0.1:8000/api/note/1
+
+Create new note:
+Route::post('/note', [NoteController::class, 'new']);
+POST - http://127.0.0.1:8000/api/note
+
+Update a note:
+Route::put('/note/{id}', [NoteController::class, 'edit']);
+PUT - http://127.0.0.1:8000/api/note/1
+
+delete a note:
+Route::delete('/note/{id}', [NoteController::class, 'delete']);
+DELETE - http://127.0.0.1:8000/api/note/1
+
+## Serve
+
+php artisan serve
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
