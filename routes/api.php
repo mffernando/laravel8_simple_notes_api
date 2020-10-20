@@ -36,7 +36,7 @@ Route::get('/note/{id}', [NoteController::class, 'one']);
 Route::post('/note', [NoteController::class, 'new']);
 
 // // update note -> /api/note/id
-// Route::put('/note/{id}', '');
+Route::put('/note/{id}', [NoteController::class, 'edit']);
 
 // // delete note -> /api/note/id
 // Route::delete('/note/{id}', '');
