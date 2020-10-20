@@ -27,10 +27,10 @@ Route::get('/ping', function (Request $request) {
 //Routes: CRUD
 
 // list notes -> /api/notes
-Route::get('notes', [NoteController::class, 'all']);
+Route::get('/notes', [NoteController::class, 'all']);
 
 // // list note -> /api/note/id
-// Route::get('/note/{id}', '');
+Route::get('/note/{id}', [NoteController::class, 'one']);
 
 // // create note -> /api/note
 // Route::post('/note', '');

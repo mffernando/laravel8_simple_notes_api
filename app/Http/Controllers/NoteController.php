@@ -24,4 +24,16 @@ class NoteController extends Controller
 
         return $this->array;
     }
+
+    public function one($id) {
+        $note = Note::find($id);
+
+        if($note) {
+            $this->array['result'] = $note;
+        } else {
+            $this->array['error'] = 'ID not found';
+        }
+
+        return $this->array;
+    }
 }
